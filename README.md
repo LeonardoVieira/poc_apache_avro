@@ -1,2 +1,5 @@
-# poc_apache_avro
-POC Apache AVRO - iniciando estudos
+# Tutorial de Apache Avro
+
+Exemplo de utilização do Apache AVRO, serializando/deserializando objetos e geração de codigo.
+
+Leonardo Vieira - 2015
