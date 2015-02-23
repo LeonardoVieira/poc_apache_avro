@@ -3,289 +3,729 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package com.avro.entity;
-
+package com.avro.entity;  
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class Book extends org.apache.avro.specific.SpecificRecordBase implements
-		org.apache.avro.specific.SpecificRecord {
-	public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser()
-			.parse("{\"type\":\"record\",\"name\":\"Book\",\"namespace\":\"com.avro.entity\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"id\",\"type\":[\"int\",\"null\"]},{\"name\":\"category\",\"type\":[\"string\",\"null\"]}]}");
+public class Book extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Book\",\"namespace\":\"com.avro.entity\",\"fields\":[{\"name\":\"title\",\"type\":\"string\"},{\"name\":\"subtitle\",\"type\":[\"string\",\"null\"]},{\"name\":\"ISBN\",\"type\":\"long\"},{\"name\":\"pages\",\"type\":\"int\"},{\"name\":\"edition\",\"type\":\"int\"},{\"name\":\"bookType\",\"type\":\"string\"},{\"name\":\"year\",\"type\":\"int\"},{\"name\":\"barCode\",\"type\":\"string\"},{\"name\":\"subject\",\"type\":\"string\"},{\"name\":\"language\",\"type\":\"string\"},{\"name\":\"publisher\",\"type\":{\"type\":\"record\",\"name\":\"Publisher\",\"fields\":[{\"name\":\"name\",\"type\":[\"string\",\"null\"]}]}},{\"name\":\"author\",\"type\":{\"type\":\"record\",\"name\":\"Author\",\"fields\":[{\"name\":\"name\",\"type\":[\"string\",\"null\"]}]}}]}");
+  public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
+  @Deprecated public java.lang.CharSequence title;
+  @Deprecated public java.lang.CharSequence subtitle;
+  @Deprecated public long ISBN;
+  @Deprecated public int pages;
+  @Deprecated public int edition;
+  @Deprecated public java.lang.CharSequence bookType;
+  @Deprecated public int year;
+  @Deprecated public java.lang.CharSequence barCode;
+  @Deprecated public java.lang.CharSequence subject;
+  @Deprecated public java.lang.CharSequence language;
+  @Deprecated public com.avro.entity.Publisher publisher;
+  @Deprecated public com.avro.entity.Author author;
 
-	public static org.apache.avro.Schema getClassSchema() {
-		return SCHEMA$;
-	}
+  /**
+   * Default constructor.  Note that this does not initialize fields
+   * to their default values from the schema.  If that is desired then
+   * one should use <code>newBuilder()</code>. 
+   */
+  public Book() {}
 
-	@Deprecated
-	public java.lang.CharSequence name;
-	@Deprecated
-	public java.lang.Integer id;
-	@Deprecated
-	public java.lang.CharSequence category;
+  /**
+   * All-args constructor.
+   */
+  public Book(java.lang.CharSequence title, java.lang.CharSequence subtitle, java.lang.Long ISBN, java.lang.Integer pages, java.lang.Integer edition, java.lang.CharSequence bookType, java.lang.Integer year, java.lang.CharSequence barCode, java.lang.CharSequence subject, java.lang.CharSequence language, com.avro.entity.Publisher publisher, com.avro.entity.Author author) {
+    this.title = title;
+    this.subtitle = subtitle;
+    this.ISBN = ISBN;
+    this.pages = pages;
+    this.edition = edition;
+    this.bookType = bookType;
+    this.year = year;
+    this.barCode = barCode;
+    this.subject = subject;
+    this.language = language;
+    this.publisher = publisher;
+    this.author = author;
+  }
 
-	/**
-	 * Default constructor. Note that this does not initialize fields to their
-	 * default values from the schema. If that is desired then one should use
-	 * <code>newBuilder()</code>.
-	 */
-	public Book() {
-	}
+  public org.apache.avro.Schema getSchema() { return SCHEMA$; }
+  // Used by DatumWriter.  Applications should not call. 
+  public java.lang.Object get(int field$) {
+    switch (field$) {
+    case 0: return title;
+    case 1: return subtitle;
+    case 2: return ISBN;
+    case 3: return pages;
+    case 4: return edition;
+    case 5: return bookType;
+    case 6: return year;
+    case 7: return barCode;
+    case 8: return subject;
+    case 9: return language;
+    case 10: return publisher;
+    case 11: return author;
+    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    }
+  }
+  // Used by DatumReader.  Applications should not call. 
+  @SuppressWarnings(value="unchecked")
+  public void put(int field$, java.lang.Object value$) {
+    switch (field$) {
+    case 0: title = (java.lang.CharSequence)value$; break;
+    case 1: subtitle = (java.lang.CharSequence)value$; break;
+    case 2: ISBN = (java.lang.Long)value$; break;
+    case 3: pages = (java.lang.Integer)value$; break;
+    case 4: edition = (java.lang.Integer)value$; break;
+    case 5: bookType = (java.lang.CharSequence)value$; break;
+    case 6: year = (java.lang.Integer)value$; break;
+    case 7: barCode = (java.lang.CharSequence)value$; break;
+    case 8: subject = (java.lang.CharSequence)value$; break;
+    case 9: language = (java.lang.CharSequence)value$; break;
+    case 10: publisher = (com.avro.entity.Publisher)value$; break;
+    case 11: author = (com.avro.entity.Author)value$; break;
+    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    }
+  }
 
-	/**
-	 * All-args constructor.
-	 */
-	public Book(java.lang.CharSequence name, java.lang.Integer id,
-			java.lang.CharSequence category) {
-		this.name = name;
-		this.id = id;
-		this.category = category;
-	}
+  /**
+   * Gets the value of the 'title' field.
+   */
+  public java.lang.CharSequence getTitle() {
+    return title;
+  }
 
-	public org.apache.avro.Schema getSchema() {
-		return SCHEMA$;
-	}
+  /**
+   * Sets the value of the 'title' field.
+   * @param value the value to set.
+   */
+  public void setTitle(java.lang.CharSequence value) {
+    this.title = value;
+  }
 
-	// Used by DatumWriter. Applications should not call.
-	public java.lang.Object get(int field$) {
-		switch (field$) {
-		case 0:
-			return name;
-		case 1:
-			return id;
-		case 2:
-			return category;
-		default:
-			throw new org.apache.avro.AvroRuntimeException("Bad index");
-		}
-	}
+  /**
+   * Gets the value of the 'subtitle' field.
+   */
+  public java.lang.CharSequence getSubtitle() {
+    return subtitle;
+  }
 
-	// Used by DatumReader. Applications should not call.
-	@SuppressWarnings(value = "unchecked")
-	public void put(int field$, java.lang.Object value$) {
-		switch (field$) {
-		case 0:
-			name = (java.lang.CharSequence) value$;
-			break;
-		case 1:
-			id = (java.lang.Integer) value$;
-			break;
-		case 2:
-			category = (java.lang.CharSequence) value$;
-			break;
-		default:
-			throw new org.apache.avro.AvroRuntimeException("Bad index");
-		}
-	}
+  /**
+   * Sets the value of the 'subtitle' field.
+   * @param value the value to set.
+   */
+  public void setSubtitle(java.lang.CharSequence value) {
+    this.subtitle = value;
+  }
 
-	/**
-	 * Gets the value of the 'name' field.
-	 */
-	public java.lang.CharSequence getName() {
-		return name;
-	}
+  /**
+   * Gets the value of the 'ISBN' field.
+   */
+  public java.lang.Long getISBN() {
+    return ISBN;
+  }
 
-	/**
-	 * Sets the value of the 'name' field.
-	 * 
-	 * @param value
-	 *            the value to set.
-	 */
-	public void setName(java.lang.CharSequence value) {
-		this.name = value;
-	}
+  /**
+   * Sets the value of the 'ISBN' field.
+   * @param value the value to set.
+   */
+  public void setISBN(java.lang.Long value) {
+    this.ISBN = value;
+  }
 
-	/**
-	 * Gets the value of the 'id' field.
-	 */
-	public java.lang.Integer getId() {
-		return id;
-	}
+  /**
+   * Gets the value of the 'pages' field.
+   */
+  public java.lang.Integer getPages() {
+    return pages;
+  }
 
-	/**
-	 * Sets the value of the 'id' field.
-	 * 
-	 * @param value
-	 *            the value to set.
-	 */
-	public void setId(java.lang.Integer value) {
-		this.id = value;
-	}
+  /**
+   * Sets the value of the 'pages' field.
+   * @param value the value to set.
+   */
+  public void setPages(java.lang.Integer value) {
+    this.pages = value;
+  }
 
-	/**
-	 * Gets the value of the 'category' field.
-	 */
-	public java.lang.CharSequence getCategory() {
-		return category;
-	}
+  /**
+   * Gets the value of the 'edition' field.
+   */
+  public java.lang.Integer getEdition() {
+    return edition;
+  }
 
-	/**
-	 * Sets the value of the 'category' field.
-	 * 
-	 * @param value
-	 *            the value to set.
-	 */
-	public void setCategory(java.lang.CharSequence value) {
-		this.category = value;
-	}
+  /**
+   * Sets the value of the 'edition' field.
+   * @param value the value to set.
+   */
+  public void setEdition(java.lang.Integer value) {
+    this.edition = value;
+  }
 
-	/** Creates a new Book RecordBuilder */
-	public static com.avro.entity.Book.Builder newBuilder() {
-		return new com.avro.entity.Book.Builder();
-	}
+  /**
+   * Gets the value of the 'bookType' field.
+   */
+  public java.lang.CharSequence getBookType() {
+    return bookType;
+  }
 
-	/** Creates a new Book RecordBuilder by copying an existing Builder */
-	public static com.avro.entity.Book.Builder newBuilder(
-			com.avro.entity.Book.Builder other) {
-		return new com.avro.entity.Book.Builder(other);
-	}
+  /**
+   * Sets the value of the 'bookType' field.
+   * @param value the value to set.
+   */
+  public void setBookType(java.lang.CharSequence value) {
+    this.bookType = value;
+  }
 
-	/** Creates a new Book RecordBuilder by copying an existing Book instance */
-	public static com.avro.entity.Book.Builder newBuilder(
-			com.avro.entity.Book other) {
-		return new com.avro.entity.Book.Builder(other);
-	}
+  /**
+   * Gets the value of the 'year' field.
+   */
+  public java.lang.Integer getYear() {
+    return year;
+  }
 
-	/**
-	 * RecordBuilder for Book instances.
-	 */
-	public static class Builder extends
-			org.apache.avro.specific.SpecificRecordBuilderBase<Book> implements
-			org.apache.avro.data.RecordBuilder<Book> {
+  /**
+   * Sets the value of the 'year' field.
+   * @param value the value to set.
+   */
+  public void setYear(java.lang.Integer value) {
+    this.year = value;
+  }
 
-		private java.lang.CharSequence name;
-		private java.lang.Integer id;
-		private java.lang.CharSequence category;
+  /**
+   * Gets the value of the 'barCode' field.
+   */
+  public java.lang.CharSequence getBarCode() {
+    return barCode;
+  }
 
-		/** Creates a new Builder */
-		private Builder() {
-			super(com.avro.entity.Book.SCHEMA$);
-		}
+  /**
+   * Sets the value of the 'barCode' field.
+   * @param value the value to set.
+   */
+  public void setBarCode(java.lang.CharSequence value) {
+    this.barCode = value;
+  }
 
-		/** Creates a Builder by copying an existing Builder */
-		private Builder(com.avro.entity.Book.Builder other) {
-			super(other);
-			if (isValidValue(fields()[0], other.name)) {
-				this.name = data().deepCopy(fields()[0].schema(), other.name);
-				fieldSetFlags()[0] = true;
-			}
-			if (isValidValue(fields()[1], other.id)) {
-				this.id = data().deepCopy(fields()[1].schema(), other.id);
-				fieldSetFlags()[1] = true;
-			}
-			if (isValidValue(fields()[2], other.category)) {
-				this.category = data().deepCopy(fields()[2].schema(),
-						other.category);
-				fieldSetFlags()[2] = true;
-			}
-		}
+  /**
+   * Gets the value of the 'subject' field.
+   */
+  public java.lang.CharSequence getSubject() {
+    return subject;
+  }
 
-		/** Creates a Builder by copying an existing Book instance */
-		private Builder(com.avro.entity.Book other) {
-			super(com.avro.entity.Book.SCHEMA$);
-			if (isValidValue(fields()[0], other.name)) {
-				this.name = data().deepCopy(fields()[0].schema(), other.name);
-				fieldSetFlags()[0] = true;
-			}
-			if (isValidValue(fields()[1], other.id)) {
-				this.id = data().deepCopy(fields()[1].schema(), other.id);
-				fieldSetFlags()[1] = true;
-			}
-			if (isValidValue(fields()[2], other.category)) {
-				this.category = data().deepCopy(fields()[2].schema(),
-						other.category);
-				fieldSetFlags()[2] = true;
-			}
-		}
+  /**
+   * Sets the value of the 'subject' field.
+   * @param value the value to set.
+   */
+  public void setSubject(java.lang.CharSequence value) {
+    this.subject = value;
+  }
 
-		/** Gets the value of the 'name' field */
-		public java.lang.CharSequence getName() {
-			return name;
-		}
+  /**
+   * Gets the value of the 'language' field.
+   */
+  public java.lang.CharSequence getLanguage() {
+    return language;
+  }
 
-		/** Sets the value of the 'name' field */
-		public com.avro.entity.Book.Builder setName(java.lang.CharSequence value) {
-			validate(fields()[0], value);
-			this.name = value;
-			fieldSetFlags()[0] = true;
-			return this;
-		}
+  /**
+   * Sets the value of the 'language' field.
+   * @param value the value to set.
+   */
+  public void setLanguage(java.lang.CharSequence value) {
+    this.language = value;
+  }
 
-		/** Checks whether the 'name' field has been set */
-		public boolean hasName() {
-			return fieldSetFlags()[0];
-		}
+  /**
+   * Gets the value of the 'publisher' field.
+   */
+  public com.avro.entity.Publisher getPublisher() {
+    return publisher;
+  }
 
-		/** Clears the value of the 'name' field */
-		public com.avro.entity.Book.Builder clearName() {
-			name = null;
-			fieldSetFlags()[0] = false;
-			return this;
-		}
+  /**
+   * Sets the value of the 'publisher' field.
+   * @param value the value to set.
+   */
+  public void setPublisher(com.avro.entity.Publisher value) {
+    this.publisher = value;
+  }
 
-		/** Gets the value of the 'id' field */
-		public java.lang.Integer getId() {
-			return id;
-		}
+  /**
+   * Gets the value of the 'author' field.
+   */
+  public com.avro.entity.Author getAuthor() {
+    return author;
+  }
 
-		/** Sets the value of the 'id' field */
-		public com.avro.entity.Book.Builder setId(java.lang.Integer value) {
-			validate(fields()[1], value);
-			this.id = value;
-			fieldSetFlags()[1] = true;
-			return this;
-		}
+  /**
+   * Sets the value of the 'author' field.
+   * @param value the value to set.
+   */
+  public void setAuthor(com.avro.entity.Author value) {
+    this.author = value;
+  }
 
-		/** Checks whether the 'id' field has been set */
-		public boolean hasId() {
-			return fieldSetFlags()[1];
-		}
+  /** Creates a new Book RecordBuilder */
+  public static com.avro.entity.Book.Builder newBuilder() {
+    return new com.avro.entity.Book.Builder();
+  }
+  
+  /** Creates a new Book RecordBuilder by copying an existing Builder */
+  public static com.avro.entity.Book.Builder newBuilder(com.avro.entity.Book.Builder other) {
+    return new com.avro.entity.Book.Builder(other);
+  }
+  
+  /** Creates a new Book RecordBuilder by copying an existing Book instance */
+  public static com.avro.entity.Book.Builder newBuilder(com.avro.entity.Book other) {
+    return new com.avro.entity.Book.Builder(other);
+  }
+  
+  /**
+   * RecordBuilder for Book instances.
+   */
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Book>
+    implements org.apache.avro.data.RecordBuilder<Book> {
 
-		/** Clears the value of the 'id' field */
-		public com.avro.entity.Book.Builder clearId() {
-			id = null;
-			fieldSetFlags()[1] = false;
-			return this;
-		}
+    private java.lang.CharSequence title;
+    private java.lang.CharSequence subtitle;
+    private long ISBN;
+    private int pages;
+    private int edition;
+    private java.lang.CharSequence bookType;
+    private int year;
+    private java.lang.CharSequence barCode;
+    private java.lang.CharSequence subject;
+    private java.lang.CharSequence language;
+    private com.avro.entity.Publisher publisher;
+    private com.avro.entity.Author author;
 
-		/** Gets the value of the 'category' field */
-		public java.lang.CharSequence getCategory() {
-			return category;
-		}
+    /** Creates a new Builder */
+    private Builder() {
+      super(com.avro.entity.Book.SCHEMA$);
+    }
+    
+    /** Creates a Builder by copying an existing Builder */
+    private Builder(com.avro.entity.Book.Builder other) {
+      super(other);
+      if (isValidValue(fields()[0], other.title)) {
+        this.title = data().deepCopy(fields()[0].schema(), other.title);
+        fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.subtitle)) {
+        this.subtitle = data().deepCopy(fields()[1].schema(), other.subtitle);
+        fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.ISBN)) {
+        this.ISBN = data().deepCopy(fields()[2].schema(), other.ISBN);
+        fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.pages)) {
+        this.pages = data().deepCopy(fields()[3].schema(), other.pages);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.edition)) {
+        this.edition = data().deepCopy(fields()[4].schema(), other.edition);
+        fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.bookType)) {
+        this.bookType = data().deepCopy(fields()[5].schema(), other.bookType);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.year)) {
+        this.year = data().deepCopy(fields()[6].schema(), other.year);
+        fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.barCode)) {
+        this.barCode = data().deepCopy(fields()[7].schema(), other.barCode);
+        fieldSetFlags()[7] = true;
+      }
+      if (isValidValue(fields()[8], other.subject)) {
+        this.subject = data().deepCopy(fields()[8].schema(), other.subject);
+        fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.language)) {
+        this.language = data().deepCopy(fields()[9].schema(), other.language);
+        fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.publisher)) {
+        this.publisher = data().deepCopy(fields()[10].schema(), other.publisher);
+        fieldSetFlags()[10] = true;
+      }
+      if (isValidValue(fields()[11], other.author)) {
+        this.author = data().deepCopy(fields()[11].schema(), other.author);
+        fieldSetFlags()[11] = true;
+      }
+    }
+    
+    /** Creates a Builder by copying an existing Book instance */
+    private Builder(com.avro.entity.Book other) {
+            super(com.avro.entity.Book.SCHEMA$);
+      if (isValidValue(fields()[0], other.title)) {
+        this.title = data().deepCopy(fields()[0].schema(), other.title);
+        fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.subtitle)) {
+        this.subtitle = data().deepCopy(fields()[1].schema(), other.subtitle);
+        fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.ISBN)) {
+        this.ISBN = data().deepCopy(fields()[2].schema(), other.ISBN);
+        fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.pages)) {
+        this.pages = data().deepCopy(fields()[3].schema(), other.pages);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.edition)) {
+        this.edition = data().deepCopy(fields()[4].schema(), other.edition);
+        fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.bookType)) {
+        this.bookType = data().deepCopy(fields()[5].schema(), other.bookType);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.year)) {
+        this.year = data().deepCopy(fields()[6].schema(), other.year);
+        fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.barCode)) {
+        this.barCode = data().deepCopy(fields()[7].schema(), other.barCode);
+        fieldSetFlags()[7] = true;
+      }
+      if (isValidValue(fields()[8], other.subject)) {
+        this.subject = data().deepCopy(fields()[8].schema(), other.subject);
+        fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.language)) {
+        this.language = data().deepCopy(fields()[9].schema(), other.language);
+        fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.publisher)) {
+        this.publisher = data().deepCopy(fields()[10].schema(), other.publisher);
+        fieldSetFlags()[10] = true;
+      }
+      if (isValidValue(fields()[11], other.author)) {
+        this.author = data().deepCopy(fields()[11].schema(), other.author);
+        fieldSetFlags()[11] = true;
+      }
+    }
 
-		/** Sets the value of the 'category' field */
-		public com.avro.entity.Book.Builder setCategory(
-				java.lang.CharSequence value) {
-			validate(fields()[2], value);
-			this.category = value;
-			fieldSetFlags()[2] = true;
-			return this;
-		}
+    /** Gets the value of the 'title' field */
+    public java.lang.CharSequence getTitle() {
+      return title;
+    }
+    
+    /** Sets the value of the 'title' field */
+    public com.avro.entity.Book.Builder setTitle(java.lang.CharSequence value) {
+      validate(fields()[0], value);
+      this.title = value;
+      fieldSetFlags()[0] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'title' field has been set */
+    public boolean hasTitle() {
+      return fieldSetFlags()[0];
+    }
+    
+    /** Clears the value of the 'title' field */
+    public com.avro.entity.Book.Builder clearTitle() {
+      title = null;
+      fieldSetFlags()[0] = false;
+      return this;
+    }
 
-		/** Checks whether the 'category' field has been set */
-		public boolean hasCategory() {
-			return fieldSetFlags()[2];
-		}
+    /** Gets the value of the 'subtitle' field */
+    public java.lang.CharSequence getSubtitle() {
+      return subtitle;
+    }
+    
+    /** Sets the value of the 'subtitle' field */
+    public com.avro.entity.Book.Builder setSubtitle(java.lang.CharSequence value) {
+      validate(fields()[1], value);
+      this.subtitle = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'subtitle' field has been set */
+    public boolean hasSubtitle() {
+      return fieldSetFlags()[1];
+    }
+    
+    /** Clears the value of the 'subtitle' field */
+    public com.avro.entity.Book.Builder clearSubtitle() {
+      subtitle = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
 
-		/** Clears the value of the 'category' field */
-		public com.avro.entity.Book.Builder clearCategory() {
-			category = null;
-			fieldSetFlags()[2] = false;
-			return this;
-		}
+    /** Gets the value of the 'ISBN' field */
+    public java.lang.Long getISBN() {
+      return ISBN;
+    }
+    
+    /** Sets the value of the 'ISBN' field */
+    public com.avro.entity.Book.Builder setISBN(long value) {
+      validate(fields()[2], value);
+      this.ISBN = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'ISBN' field has been set */
+    public boolean hasISBN() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'ISBN' field */
+    public com.avro.entity.Book.Builder clearISBN() {
+      fieldSetFlags()[2] = false;
+      return this;
+    }
 
-		public Book build() {
-			try {
-				Book record = new Book();
-				record.name = fieldSetFlags()[0] ? this.name
-						: (java.lang.CharSequence) defaultValue(fields()[0]);
-				record.id = fieldSetFlags()[1] ? this.id
-						: (java.lang.Integer) defaultValue(fields()[1]);
-				record.category = fieldSetFlags()[2] ? this.category
-						: (java.lang.CharSequence) defaultValue(fields()[2]);
-				return record;
-			} catch (Exception e) {
-				throw new org.apache.avro.AvroRuntimeException(e);
-			}
-		}
-	}
+    /** Gets the value of the 'pages' field */
+    public java.lang.Integer getPages() {
+      return pages;
+    }
+    
+    /** Sets the value of the 'pages' field */
+    public com.avro.entity.Book.Builder setPages(int value) {
+      validate(fields()[3], value);
+      this.pages = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'pages' field has been set */
+    public boolean hasPages() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'pages' field */
+    public com.avro.entity.Book.Builder clearPages() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'edition' field */
+    public java.lang.Integer getEdition() {
+      return edition;
+    }
+    
+    /** Sets the value of the 'edition' field */
+    public com.avro.entity.Book.Builder setEdition(int value) {
+      validate(fields()[4], value);
+      this.edition = value;
+      fieldSetFlags()[4] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'edition' field has been set */
+    public boolean hasEdition() {
+      return fieldSetFlags()[4];
+    }
+    
+    /** Clears the value of the 'edition' field */
+    public com.avro.entity.Book.Builder clearEdition() {
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'bookType' field */
+    public java.lang.CharSequence getBookType() {
+      return bookType;
+    }
+    
+    /** Sets the value of the 'bookType' field */
+    public com.avro.entity.Book.Builder setBookType(java.lang.CharSequence value) {
+      validate(fields()[5], value);
+      this.bookType = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'bookType' field has been set */
+    public boolean hasBookType() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'bookType' field */
+    public com.avro.entity.Book.Builder clearBookType() {
+      bookType = null;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'year' field */
+    public java.lang.Integer getYear() {
+      return year;
+    }
+    
+    /** Sets the value of the 'year' field */
+    public com.avro.entity.Book.Builder setYear(int value) {
+      validate(fields()[6], value);
+      this.year = value;
+      fieldSetFlags()[6] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'year' field has been set */
+    public boolean hasYear() {
+      return fieldSetFlags()[6];
+    }
+    
+    /** Clears the value of the 'year' field */
+    public com.avro.entity.Book.Builder clearYear() {
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'barCode' field */
+    public java.lang.CharSequence getBarCode() {
+      return barCode;
+    }
+    
+    /** Sets the value of the 'barCode' field */
+    public com.avro.entity.Book.Builder setBarCode(java.lang.CharSequence value) {
+      validate(fields()[7], value);
+      this.barCode = value;
+      fieldSetFlags()[7] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'barCode' field has been set */
+    public boolean hasBarCode() {
+      return fieldSetFlags()[7];
+    }
+    
+    /** Clears the value of the 'barCode' field */
+    public com.avro.entity.Book.Builder clearBarCode() {
+      barCode = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'subject' field */
+    public java.lang.CharSequence getSubject() {
+      return subject;
+    }
+    
+    /** Sets the value of the 'subject' field */
+    public com.avro.entity.Book.Builder setSubject(java.lang.CharSequence value) {
+      validate(fields()[8], value);
+      this.subject = value;
+      fieldSetFlags()[8] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'subject' field has been set */
+    public boolean hasSubject() {
+      return fieldSetFlags()[8];
+    }
+    
+    /** Clears the value of the 'subject' field */
+    public com.avro.entity.Book.Builder clearSubject() {
+      subject = null;
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'language' field */
+    public java.lang.CharSequence getLanguage() {
+      return language;
+    }
+    
+    /** Sets the value of the 'language' field */
+    public com.avro.entity.Book.Builder setLanguage(java.lang.CharSequence value) {
+      validate(fields()[9], value);
+      this.language = value;
+      fieldSetFlags()[9] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'language' field has been set */
+    public boolean hasLanguage() {
+      return fieldSetFlags()[9];
+    }
+    
+    /** Clears the value of the 'language' field */
+    public com.avro.entity.Book.Builder clearLanguage() {
+      language = null;
+      fieldSetFlags()[9] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'publisher' field */
+    public com.avro.entity.Publisher getPublisher() {
+      return publisher;
+    }
+    
+    /** Sets the value of the 'publisher' field */
+    public com.avro.entity.Book.Builder setPublisher(com.avro.entity.Publisher value) {
+      validate(fields()[10], value);
+      this.publisher = value;
+      fieldSetFlags()[10] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'publisher' field has been set */
+    public boolean hasPublisher() {
+      return fieldSetFlags()[10];
+    }
+    
+    /** Clears the value of the 'publisher' field */
+    public com.avro.entity.Book.Builder clearPublisher() {
+      publisher = null;
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'author' field */
+    public com.avro.entity.Author getAuthor() {
+      return author;
+    }
+    
+    /** Sets the value of the 'author' field */
+    public com.avro.entity.Book.Builder setAuthor(com.avro.entity.Author value) {
+      validate(fields()[11], value);
+      this.author = value;
+      fieldSetFlags()[11] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'author' field has been set */
+    public boolean hasAuthor() {
+      return fieldSetFlags()[11];
+    }
+    
+    /** Clears the value of the 'author' field */
+    public com.avro.entity.Book.Builder clearAuthor() {
+      author = null;
+      fieldSetFlags()[11] = false;
+      return this;
+    }
+
+    public Book build() {
+      try {
+        Book record = new Book();
+        record.title = fieldSetFlags()[0] ? this.title : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.subtitle = fieldSetFlags()[1] ? this.subtitle : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.ISBN = fieldSetFlags()[2] ? this.ISBN : (java.lang.Long) defaultValue(fields()[2]);
+        record.pages = fieldSetFlags()[3] ? this.pages : (java.lang.Integer) defaultValue(fields()[3]);
+        record.edition = fieldSetFlags()[4] ? this.edition : (java.lang.Integer) defaultValue(fields()[4]);
+        record.bookType = fieldSetFlags()[5] ? this.bookType : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.year = fieldSetFlags()[6] ? this.year : (java.lang.Integer) defaultValue(fields()[6]);
+        record.barCode = fieldSetFlags()[7] ? this.barCode : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.subject = fieldSetFlags()[8] ? this.subject : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.language = fieldSetFlags()[9] ? this.language : (java.lang.CharSequence) defaultValue(fields()[9]);
+        record.publisher = fieldSetFlags()[10] ? this.publisher : (com.avro.entity.Publisher) defaultValue(fields()[10]);
+        record.author = fieldSetFlags()[11] ? this.author : (com.avro.entity.Author) defaultValue(fields()[11]);
+        return record;
+      } catch (Exception e) {
+        throw new org.apache.avro.AvroRuntimeException(e);
+      }
+    }
+  }
 }

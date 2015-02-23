@@ -3,8 +3,35 @@
 	"type": "record",
 	"name": "Book",
 	"fields": [
-		{"name": "name", "type": "string"},
-		{"name": "id",  "type": ["int", "null"]},
-		{"name": "category", "type": ["string", "null"]}
+		{"name": "title", "type": "string"},
+		{"name": "subtitle", "type": ["string", "null"]},
+		{"name": "ISBN", "type": "long"},
+		{"name": "pages",  "type": "int"},
+		{"name": "edition", "type": "int"},
+		{"name": "bookType", "type": "string"},
+		{"name": "year", "type": "int"},
+		{"name": "barCode", "type": "string"},
+		{"name": "subject", "type": "string"},
+		{"name": "language", "type": "string"},
+		{
+			"name": "publisher",
+			"type": {
+				"type": "record",
+				"name": "Publisher",
+				"fields": [
+					{"name": "name", "type": ["string", "null"]}
+				]
+			}
+		},
+		{
+			"name": "author",
+			"type": {
+				"type": "record",
+				"name": "Author",
+				"fields": [
+					{"name": "name", "type": ["string", "null"]}
+				]
+			}
+		}
 	 ]
 }
