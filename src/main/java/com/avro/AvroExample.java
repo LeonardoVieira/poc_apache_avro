@@ -24,7 +24,7 @@ public class AvroExample {
 		// Create a temp file
 		File store = File.createTempFile("book", ".avro");
 
-		Serialize(bookList, store);
+		serialize(bookList, store);
 
 		deserialize(store);
 	}
@@ -51,7 +51,7 @@ public class AvroExample {
 	 * @param store
 	 * @throws IOException
 	 */
-	private static void Serialize(List<Book> bookList, File store)
+	private static void serialize(List<Book> bookList, File store)
 			throws IOException {
 		System.out.println("serializing books to temp file: " + store.getPath());
 
