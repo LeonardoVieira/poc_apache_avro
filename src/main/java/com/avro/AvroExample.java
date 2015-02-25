@@ -35,12 +35,13 @@ public class AvroExample {
 	 * @param store - 
 	 * @throws IOException - Caso ocorra algo inesperado
 	 */
+	@SuppressWarnings("resource")
 	private static void deserialize(File store) throws IOException {
 		DatumReader<Book> bookDatumReader = new SpecificDatumReader<Book>(Book.class);
 		DataFileReader<Book> bookFileReader = new DataFileReader<Book>(store, bookDatumReader);
 		while (bookFileReader.hasNext()) {
-			Book b1 = bookFileReader.next();
-			System.out.println("deserialized from file: " + b1);
+			Book book = bookFileReader.next();
+			System.out.println("deserialized from file: " + book);
 		}
 	}
 
